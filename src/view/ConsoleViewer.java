@@ -233,6 +233,7 @@ public class ConsoleViewer {
 				System.out.println("구분 : " + foundPrisoners.get(i).getType());
 				System.out.println("형량 : " + foundPrisoners.get(i).getPenalty() + "개월");
 				System.out.println("상벌점 : " + foundPrisoners.get(i).getScore() + "점");
+				System.out.println("징벌횟수 : " + foundPrisoners.get(i).getPunish() + "번");
 				System.out.println("-------------------");
 				System.out.println();
 				if(i < foundPrisoners.size() - 1) {
@@ -252,9 +253,9 @@ public class ConsoleViewer {
 			return;
 		}
 			System.out.println();
-			System.out.println("=====================================================================================");
-			System.out.println("죄수번호\t\t이름\t\t죄목\t\t구분\t\t형량\t\t상벌점");
-			System.out.println("-------------------------------------------------------------------------------------");
+			System.out.println("=======================================================================================================");
+			System.out.println("죄수번호\t\t이름\t\t죄목\t\t구분\t\t형량\t\t상벌점\t\t징벌횟수");
+			System.out.println("-------------------------------------------------------------------------------------------------------");
 				for (int i = 0; i < prisoners.size(); i++) {
 				/*System.out.println("죄수번호 : " + prisoners.get(i).getPrinum());
 				System.out.println("이름 : " + prisoners.get(i).getName());
@@ -263,13 +264,14 @@ public class ConsoleViewer {
 				System.out.println("형량 : " + prisoners.get(i).getPenalty() + "개월");*/
 	
 				System.out.println(prisoners.get(i).getPrinum() +"\t"+prisoners.get(i).getName()+"\t\t"+prisoners.get(i).getCrime()+"\t\t" +
-						prisoners.get(i).getType() +"\t\t" + prisoners.get(i).getPenalty() + "개월" + "\t\t" + prisoners.get(i).getScore() + "점");
+						prisoners.get(i).getType() +"\t\t" + prisoners.get(i).getPenalty() + "개월" + "\t\t" + prisoners.get(i).getScore() + "점"
+						+ "\t\t" + prisoners.get(i).getPunish()+"번");
 				
 				/*if(i < prisoners.size() - 1) {
 					System.out.println("================");
 				}*/
 				}
-			System.out.println("=====================================================================================");
+			System.out.println("=======================================================================================================");
 			System.out.println();
 		}
 	
@@ -332,7 +334,7 @@ public class ConsoleViewer {
 		if(prisonMgr.isExistPrisonerNo(prisonerNo)) {
 			if(prisonMgr.initScore(prisonerNo)) {
 				System.out.println();
-				System.out.println("징계받음");
+				System.out.println("징계 받음");
 				System.out.println();
 			} else {
 				System.out.println();
